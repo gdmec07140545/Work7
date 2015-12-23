@@ -129,7 +129,7 @@ public class GPSActivity extends Activity implements Handler.Callback {
                 mMarkerGSM=null;
                 MarkerOptions ooGSM=new MarkerOptions().position(position).icon(bd)
                         .zIndex(9).draggable(true);
-                mMarkerGSM= (Marker) mBaiduMap.addOverlay(ooGSM);
+                mMarkerGSM= (Marker) (mBaiduMap.addOverlay(ooGSM));
                 Toast.makeText(this,"基站定位成功！",Toast.LENGTH_SHORT).show();
                 break;
             default:
@@ -208,7 +208,7 @@ public class GPSActivity extends Activity implements Handler.Callback {
             gsm_Msg.sendToTarget();
         }else{
             Toast.makeText(GPSActivity.this,"基站获取失败，"+
-            "请确保AGPS,GPS已打开",Toast.LENGTH_SHORT).show();
+            "请确保AGPS,GPS已被打开",Toast.LENGTH_SHORT).show();
         }
     }
 
